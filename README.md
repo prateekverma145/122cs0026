@@ -89,4 +89,6 @@ node index.js
 - `GET /posts?type=popular` – Posts with the highest comment count  (somtime gives server error)
 - `GET /posts?type=latest` – Latest 5 posts by ID(somtime gives server error)
 
+NOTE for task 2 optimization is not made  due to time constraints
+
 
