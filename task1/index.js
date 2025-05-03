@@ -6,7 +6,7 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const WINDOW_SIZE = parseInt(process.env.WINDOW_SIZE) || 10;
 
-// Memory sliding window
+
 let windowState = [];
 // TOKEN="eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJNYXBDbGFpbXMiOnsiZXhwIjoxNzQ2Mjc5NjM1LCJpYXQiOjE3NDYyNzkzMzUsImlzcyI6IkFmZm9yZG1lZCIsImp0aSI6ImI4YjhhM2Y0LWQ5NmQtNDEzZC05NjI5LTFkNDlmMzg3ZmM4MyIsInN1YiI6IjEyMmNzMDAyNkBpaWl0ay5hYy5pbiJ9LCJlbWFpbCI6IjEyMmNzMDAyNkBpaWl0ay5hYy5pbiIsIm5hbWUiOiJwcmF0ZWVrIHZlcm1hIiwicm9sbE5vIjoiMTIyY3MwMDI2IiwiYWNjZXNzQ29kZSI6ImJ6YkNueiIsImNsaWVudElEIjoiYjhiOGEzZjQtZDk2ZC00MTNkLTk2MjktMWQ0OWYzODdmYzgzIiwiY2xpZW50U2VjcmV0IjoibUZNVUF1cE5CdlBnVkNrQSJ9.MnjDZnHaPHCcxAutfUEjE77drxebW6VcXiHN0djaaeQ"
 const apiMap ={
@@ -55,11 +55,11 @@ app.get('/numbers/:numberid', async (req, res) => {
   const prevWindow = [...windowState];
   const newNumbers = await fetchNumbers(numberid);
 
-  // Add unique numbers only
+
   const uniqueNew = newNumbers.filter((num) => !windowState.includes(num));
   windowState.push(...uniqueNew);
 
-  // Keep only last WINDOW_SIZE
+
   if (windowState.length > WINDOW_SIZE) {
     windowState = windowState.slice(windowState.length - WINDOW_SIZE);
   }
