@@ -77,7 +77,13 @@ API_TOKEN=your_api_token
 ```bash
 node index.js
 ```
-
+### screenshots
+### task1
+<img src="./task1/Screenshot 2025-05-03 193419.png" alt="Task Image" width="800"/>
+<img src="./task1/Screenshot 2025-05-03 193434.png" alt="Task Image" width="800"/>
+<img src="./task1/Screenshot 2025-05-03 193446.png" alt="Task Image" width="800"/>
+### task2 
+<img src="./task2/Screenshot 2025-05-03 193549.png" alt="Task Image" width="800"/>
 ### 🧪 API Endpoints
 
 - `GET /users` – List all users  
